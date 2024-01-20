@@ -250,4 +250,148 @@ for i in x:
     for j in i: 
         print(j)
 
-print("hello world")
+# Numpy Joining arrays
+# In Numpy we use the axes to join the arrays
+# We use concatenate() to join two arrays
+arr1=numpy.array([1,2,3])
+arr2=numpy.array([4,5,6])
+arr=numpy.concatenate((arr1,arr2))
+print(arr)
+# Output
+# [1 2 3 4 5 6 ]
+
+# Joining 2-D arrays suing axis = 1
+arr1=numpy.array([[1,2],[3,4]])
+arr2=numpy.array([[5,6],[7,8]])
+arr=numpy.concatenate((arr1,arr2))
+print(arr)
+# Output without axis
+#[[1 2]
+#  [3 4]
+#  [5 6]
+#  [7 8]]
+arr=numpy.concatenate((arr1,arr2),axis=1)
+print(arr)
+# Output with axis = 1
+# [[1 2 5 6]
+#  [3 4 7 8]]
+
+# Stacking function is same as the concatenate except the stacking is done along a new axis
+arr1=numpy.array([1,2,3])
+arr2=numpy.array([4,5,6])
+arr=numpy.stack((arr1,arr2),axis=1)
+print(arr)
+# Output
+# [[1 4]
+#  [2 5]
+#  [3 6]]
+
+# Hstack() is used to stack along the rows
+arr1 = numpy.array([1, 2, 3])
+arr2 = numpy.array([4, 5, 6])
+arr = numpy.hstack((arr1, arr2))
+print(arr)
+# output
+# [1 2 3 4 5 6]
+
+# Vstack is to stack along the columns
+arr1 = numpy.array([1, 2, 3])
+arr2 = numpy.array([4, 5, 6])
+arr = numpy.vstack((arr1, arr2))
+print(arr)
+# output
+# [[1,2,3]
+#  [4,5,6]]
+
+# Dstack is used to stack along the depth
+arr1 = numpy.array([1, 2, 3])
+arr2 = numpy.array([4, 5, 6])
+arr = numpy.dstack((arr1, arr2))
+print(arr)
+
+# Output
+# [[1 4]
+#   [2 5]
+#   [3 6]]]
+
+# Array spliters is used to split the arrays
+# array_split() function is used to split the arrays accordingly
+arr = numpy.array([1, 2, 3, 4, 5, 6])
+x = numpy.array_split(arr, 4)
+print(x)
+# Output
+# [array([1, 2]), array([3, 4]), array([5]), array([6])]
+
+# 2-D arrays splliting
+arr = numpy.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])
+x = numpy.array_split(arr, 2)
+print(x)
+# Output
+# [array([[1, 2],
+    #    [3, 4],
+    #    [5, 6]]), array([[ 7,  8],
+    #    [ 9, 10],
+    #    [11, 12]])]
+
+# hsplit() function is to split the array column vise
+arr = numpy.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])
+x = numpy.hsplit(arr, 2)
+print(x)
+# Output
+# # [array([[ 1],
+#        [ 3],
+#        [ 5],
+#        [ 7],
+#        [ 9],
+#        [11]]), array([[ 2],
+#        [ 4],
+#        [ 6],
+#        [ 8],
+#        [10],
+#        [12]])]
+
+# vsplit() function is used to split the array row vise
+arr = numpy.array([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10], [11, 12]])
+x = numpy.vsplit(arr, 3)
+print(x)
+# Output
+# [array([[1, 2],
+    #    [3, 4],
+    #    [5, 6]]), array([[ 7,  8],
+    #    [ 9, 10],
+    #    [11, 12]])]
+
+# dsplit() is the opposite of the dstack()
+
+# Searching in the array for a specific value
+# Where() function is used to search for a specfic values using the conditions in parameters of the where funtion
+arr=numpy.array([1,2,3,4,5,6,7,8])
+x=numpy.where(arr==5)
+print(x)
+# Output is the all the indices of the value 5 in the array which is 4 which is return in  a array format
+
+arr=numpy.array([1,2,3,4,5,6,7,8])
+x=numpy.where(arr%2==0)
+print(x)
+# Output gives the array of indices even number from the above array
+# [1,3,5,7]
+
+# similarly with odd numbers [0,2,4,6,8]
+# searchedsorted is used to search the array in the binary search order to insert an element and return the index of the element
+arr=numpy.array([1,2,3,4,5,6,7,8])
+x=numpy.searchsorted(arr,7)
+print(x)
+# Output
+# [6]
+
+# In searchedsorted function there is parameter side helps to pick the side to start the binary search
+arr=numpy.array([1,2,3,4,5,6,7,8])
+x=numpy.searchsorted(arr,7 ,side='right')
+print(x)
+# Output 7
+
+# Multiple values in the searchedsorted
+arr=numpy.array([1,2,3,4,5,6,7,8])
+x=numpy.searchsorted(arr,[3,5,7])
+print(x)
+# Output [2,4,6]
