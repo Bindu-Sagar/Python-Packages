@@ -12,6 +12,8 @@ print(numpy.__version__)
 # 1
 arr1=numpy.array([1,2,3])
 print(arr1)
+# Output
+# [1,2,3]
 
 # 2 Use list or tuple or other type to the array command to make them to a ndarray
 list1=[1,2,3,4,5]
@@ -245,6 +247,5 @@ for i in x:
 
 # Iterate on each scalar element
 for i in x:
-    for j in i:
+    for j in i: 
         print(j)
-    
