@@ -395,4 +395,46 @@ arr=numpy.array([1,2,3,4,5,6,7,8])
 x=numpy.searchsorted(arr,[3,5,7])
 print(x)
 # Output [2,4,6]
-# a
+
+# Sorting the array in numpy is done using the function sort()
+arr=numpy.array([3,4,1,7,2,0,6])
+print(numpy.sort(arr))
+# Output
+# [0 1 2 3 4 6 7]
+# String are sorted alphabetically
+arr=numpy.array(['banana','apple','air'])
+print(numpy.sort(arr))
+# output
+# ['air','apple','banana']
+
+# Note for boolean array it False comes first.
+# For sorting 2-D array the values in each 1-D are sorted
+
+arr=numpy.array([[3,2,1],[5,9,3]])
+print(numpy.sort(arr))
+# Output
+# [[1 2 3]
+#  [3 5 9]]
+
+# Filter array is used get some of the elements out from the array and creating new array with them
+arr=numpy.array([21,45,78,33])
+x=[True,False,True,True]
+print(arr[x])
+# Output
+# [21 78 33]
+
+# Creating filter array with values grater than 40
+filter_arr=[]
+for i in arr:
+    if(i>40):
+        filter_arr.append(True)
+    else:
+        filter_arr.append(False)
+print(arr[filter_arr])
+
+# Output
+# [45 78]
+
+
+
+# End of the basic Numpy Tutorial thwe next file that is Numpy_random will explain about random methodoligies.
